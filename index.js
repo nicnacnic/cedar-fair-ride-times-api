@@ -1,11 +1,13 @@
 const fetch = require('node-fetch');
 const express = require('express');
+const cors = require('cors')
 
 const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json());
-app.listen(port);
+app.use(cors())
+app.listen(port, () => console.log("Cedar Fair Ride Times API is now running");
 
 async function main() {
     app.get('/:id', async (req, res) => {
